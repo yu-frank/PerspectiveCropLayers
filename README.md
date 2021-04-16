@@ -1,6 +1,6 @@
 # [CVPR 2021] PCLs: Geometry-aware Neural Reconstruction of 3D Pose with Perspective Crop Layers
 
-
+<img src="src/imgs/Overview.jpg" style="zoom:20%;" />
 
 ### [[Paper]](https://arxiv.org/abs/2011.13607)
 
@@ -13,13 +13,7 @@
 <br/>
 In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2021.
 
-PyTorch implementation for removing perspective distortions from images or 2D poses to improve accuracy of 3D human pose estimation techniques. Shown below are examples of this perspective distortion and its correction using PCL. Images shown below are from the Human3.6M (left) and MPI-INF-3DHP (right) datasets. 
-
-<img src="imgs/Overview.jpg" style="zoom:25%;" />
-
-## Abstract
-
-Local processing is an essential feature of CNNs and other neural network architectures - it is one of the reasons why they work so well on images where relevant information is, to a large extent, local. However, perspective effects stemming from the projection in a conventional camera vary for different global positions in the image. We introduce Perspective Crop Layers (PCLs) - a form of perspective crop of the region of interest based on the camera geometry - and show that accounting for the perspective consistently improves the accuracy of state-of-the-art 3D pose reconstruction methods. PCLs are modular neural network layers, which, when inserted into existing CNN and MLP architectures, deterministically remove the location-dependent perspective effects while leaving end-to-end training and the number of parameters of the underlying neural network unchanged. We demonstrate that PCL leads to improved 3D human pose reconstruction accuracy for CNN architectures that use cropping operations, such as spatial transformer networks (STN), and, somewhat surprisingly, MLPs used for 2D-to-3D keypoint lifting. Our conclusion is that it is important to utilize camera calibration information when available, for classical and deep-learning-based computer vision alike. PCL offers an easy way to improve the accuracy of existing 3D reconstruction networks by making them geometry-aware.
+PyTorch implementation for removing perspective distortions from images or 2D poses using Perspective Crop Layers (PCLs) to improve accuracy of 3D human pose estimation techniques. Shown below are examples of this perspective distortion and its correction using PCL. Images shown below are from the Human3.6M (left) and MPI-INF-3DHP (right) datasets. 
 
 ## Setup
 
@@ -45,7 +39,7 @@ conda install pytorch=1.6.0 torchvision=0.7.0 cudatoolkit=10.2 -c pytorch
 
 ## Running the Demos and Using PCL
 
-We have included 2 Jupyter notebook demos for you to try out PCLs on both a general setting (**RECOMMENDED**) [**pcl_demo.ipynb**](https://github.com/yu-frank/PerspectiveCropLayers/blob/main/pcl_demo.ipynb) (which does not require any pretrained models and goes through step-by-step how to use PCL) as well as one geared towards human pose estimation on extracted samples from Human3.6m as well as MPI-INF-3DHP ([**humanPose-demo.ipynb**](https://github.com/yu-frank/PerspectiveCropLayers/blob/main/humanPose-demo.ipynb)) (which requires a pretrained model and additional data)
+We have included 2 Jupyter notebook demos for you to try out PCLs on both a general setting (**RECOMMENDED**) [**pcl_demo.ipynb**](https://github.com/yu-frank/PerspectiveCropLayers/blob/main/src/pcl_demo.ipynb) (which does not require any pretrained models and goes through step-by-step how to use PCL) as well as one geared towards human pose estimation on extracted samples from Human3.6m as well as MPI-INF-3DHP ([**humanPose-demo.ipynb**](https://github.com/yu-frank/PerspectiveCropLayers/blob/main/src/humanPose-demo.ipynb)) (which requires a pretrained model and additional data)
 
 ### Using PCLs
 
@@ -102,7 +96,7 @@ Please follow the instructions from [Margipose](https://github.com/anibali/margi
 
 ### Pretrained Models:
 
-Included in the GitHub are 4 sets of pretrained models that are used in [**humanPose-demo.ipynb**](https://github.com/yu-frank/PerspectiveCropLayers/blob/main/humanPose-demo.ipynb)
+Included in the GitHub are 4 sets of pretrained models that are used in [**humanPose-demo.ipynb**](https://github.com/yu-frank/PerspectiveCropLayers/blob/main/src/humanPose-demo.ipynb)
 
 ### Train and Evaluation Code:
 
